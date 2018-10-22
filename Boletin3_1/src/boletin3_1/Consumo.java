@@ -10,82 +10,56 @@ package boletin3_1;
  * @author clamascabaleiro
  */
 public class Consumo {
+    private float km;
+    private float litros;
+    private float vMed;
+    private float pGas;
     
-    private double km;
-    private double litros;
-    private double vMed;
-    private double pGas;
-    private double tiempo;
-  
-    
-  public Consumo(){
-
+    public Consumo(){}
+    public Consumo(float km, float litros, float vMed, float pGas){
+        this.km = km;
+        this.litros = litros;
+        this.vMed = vMed;
+        this.pGas = pGas;
     }
-  
-  public Consumo(double a, double b, double c, double d){
-      
-      km = a;
-      litros = b;
-      vMed = c;
-      pGas = d;
+    
+    public float getTempo(){
+        float tempo = km / vMed;
+        return tempo;
+    }
+    public float consumoMedio(){
+        float cMed = litros / km * 100;
+        return cMed;
+    }
+    public float consumoEuros(){
+        float cEuros = pGas / this.consumoMedio() * 100;
+        return cEuros;
+    }
+    public float getKm(){
+        return km;
+    }
+    public float getLitros(){
+        return litros;
+    }
+    public float getVmed(){
+        return vMed;
+    }
+    public float getPgas(){
+        return pGas;
+    }
+    public void setKm(float km){
+        this.km = km;
+    }
+    public void setLitros(float litros){
+        this.litros = litros;
+    }
+    public void setVmed(float vMed){
+        this.vMed = vMed;
+    }
+    public void setPgas(float pGas){
+        this.pGas = pGas;
+    }
+    
 }
-  public void setKms (double a){
-      
-      km = a;
-  }
-  
-  public double getKms (){
-      
-      return km;
-  }
-  
-  public void setLitros (double b){
-      
-      litros = b;
-  }
-  
-  public double getLitros (){
-      
-      return litros;
-  }
-  
-  public void setvMed (double c){
-      
-      vMed = c;
-  }
-  
-  public double getvMed (){
-      
-      return vMed;
-  }
-  
-  public void setpGas (double d){
-      
-      pGas = d;
-  }
-  
-  public double getpGas (){
-      
-      return pGas;
-  }
- 
-  public void setTiempo (double tiempo){
-      
-      this.tiempo = tiempo;
-  }
-  public double getTiempo (){
-      
-      return km/tiempo;
-  }
-  
-  public void consumoMedio (){
-      double consumoMedio;
-      consumoMedio = litros*100/km;
-  }
-  
-  public void consumoEuros (){
-      double consumoEuros;
-      consumoEuros = litros*100/km*pGas;
-  }
-}
+
 

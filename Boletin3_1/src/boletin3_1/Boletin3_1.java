@@ -14,10 +14,15 @@ public class Boletin3_1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         // TODO code application logic here
-        
-        Consumo coche = new Consumo ();
+        Consumo consumo1 = new Consumo();
+        consumo1.setLitros(50f);
+        consumo1.setPgas(1.57f);
+        Consumo consumo2 = new Consumo(451f, 65.7f, 74.3f, 1.57f);
+        System.out.println("consumo medio = " + consumo2.consumoMedio());
+        consumo2.setLitros(56.2f);
+        System.out.println("velocidade media" + consumo2.getVmed());
     }
-    
+       
 }
